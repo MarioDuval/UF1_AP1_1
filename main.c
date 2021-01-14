@@ -4,7 +4,7 @@
 #include <time.h> //Per poder fer els valors aleatoris
 #include <ctype.h> //Per poder fer la conversió d'un caràcter a majúscules
 
-//Hola
+
 
 void main(){
     char alphabet[3][10] = {
