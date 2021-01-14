@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/mario/CLionProjects/UF1-AP1.1/main.c
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+time.h
+-
+ctype.h
+-
+

@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>main.c</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #bbb529;}
+.s1 { color: #a9b7c6;}
+.s2 { color: #6a8759;}
+.s3 { color: #808080;}
+.s4 { color: #cc7832;}
+.s5 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+main.c</font>
+</center></td></tr></table>
+<pre><span class="s0">#include </span><span class="s2">&lt;stdio.h&gt; </span><span class="s3">//Per poder utilitzar caràcters</span>
+<span class="s0">#include </span><span class="s2">&lt;string.h&gt; </span><span class="s3">//Per poder utilitzar cadenes de caràcters</span>
+<span class="s0">#include </span><span class="s2">&lt;stdlib.h&gt; </span><span class="s3">//Per poder fer els valors aleatoris</span>
+<span class="s0">#include </span><span class="s2">&lt;time.h&gt; </span><span class="s3">//Per poder fer els valors aleatoris</span>
+<span class="s0">#include </span><span class="s2">&lt;ctype.h&gt; </span><span class="s3">//Per poder fer la conversió d'un caràcter a majúscules</span>
+
+
+
+<span class="s4">void </span><span class="s1">main(){</span>
+    <span class="s4">char </span><span class="s1">alphabet[</span><span class="s5">3</span><span class="s1">][</span><span class="s5">10</span><span class="s1">] = {</span>
+            <span class="s1">{</span><span class="s2">'A'</span><span class="s4">, </span><span class="s2">'B'</span><span class="s4">, </span><span class="s2">'C'</span><span class="s4">, </span><span class="s2">'D'</span><span class="s4">, </span><span class="s2">'E'</span><span class="s4">, </span><span class="s2">'F'</span><span class="s4">, </span><span class="s2">'G'</span><span class="s4">, </span><span class="s2">'H'</span><span class="s4">, </span><span class="s2">'I'</span><span class="s4">, </span><span class="s2">'</span><span class="s4">\0</span><span class="s2">'</span><span class="s1">}</span><span class="s4">,</span>
+            <span class="s1">{</span><span class="s2">'J'</span><span class="s4">, </span><span class="s2">'K'</span><span class="s4">, </span><span class="s2">'L'</span><span class="s4">, </span><span class="s2">'M'</span><span class="s4">, </span><span class="s2">'N'</span><span class="s4">, </span><span class="s2">'O'</span><span class="s4">, </span><span class="s2">'P'</span><span class="s4">, </span><span class="s2">'Q'</span><span class="s4">, </span><span class="s2">'</span><span class="s4">\0</span><span class="s2">'</span><span class="s1">}</span><span class="s4">,      </span><span class="s3">//La matriu amb les lletres de l'abecedari</span>
+            <span class="s1">{</span><span class="s2">'R'</span><span class="s4">, </span><span class="s2">'S'</span><span class="s4">, </span><span class="s2">'T'</span><span class="s4">, </span><span class="s2">'U'</span><span class="s4">, </span><span class="s2">'V'</span><span class="s4">, </span><span class="s2">'W'</span><span class="s4">, </span><span class="s2">'X'</span><span class="s4">, </span><span class="s2">'Y'</span><span class="s4">, </span><span class="s2">'Z'</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\0</span><span class="s2">'</span><span class="s1">}</span><span class="s4">,</span>
+    <span class="s1">}</span><span class="s4">;</span>
+
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">*****************************************</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">*****************************************</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">*****************************************</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">********Bienvenid@ al AHORCADO***********</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;  </span><span class="s3">//La benvinguda al joc</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">*****************************************</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">*****************************************</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">*****************************************</span><span class="s4">\n\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+
+    <span class="s1">system(</span><span class="s2">&quot;pause&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s3">//Per pausar la neteja de pantalla</span>
+    <span class="s1">system(</span><span class="s2">&quot;cls&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s3">//Per fer la neteja de pantalla</span>
+
+    <span class="s4">int </span><span class="s1">numberAttempts = </span><span class="s5">7</span><span class="s4">; </span><span class="s3">//Variable per controlar el número d'intents</span>
+
+    <span class="s4">char </span><span class="s1">*word[] = {</span><span class="s2">&quot;ORDENADOR&quot;</span><span class="s4">, </span><span class="s2">&quot;MASCARILLA&quot;</span><span class="s4">,</span><span class="s2">&quot;DINERO&quot;</span><span class="s4">, </span><span class="s2">&quot;ANIMAL&quot;</span><span class="s4">, </span><span class="s2">&quot;DEPORTE&quot;</span><span class="s4">, </span><span class="s2">&quot;INSTITUTO&quot;</span><span class="s4">, </span><span class="s2">&quot;AVION&quot;</span><span class="s4">, </span><span class="s2">&quot;ISLA&quot;</span><span class="s1">}</span><span class="s4">; </span><span class="s3">//array amb la selecció de paraules</span>
+    <span class="s4">int </span><span class="s1">posWord</span><span class="s4">; </span><span class="s3">//aletori de les paraules</span>
+    <span class="s1">srand( (</span><span class="s4">unsigned</span><span class="s1">)time ( NULL ) )</span><span class="s4">; </span><span class="s3">//Inicia el generador de nombres pseudoaleatoris</span>
+    <span class="s1">posWord = rand()%</span><span class="s5">9</span><span class="s4">; </span><span class="s3">//Genera un nombre pseudoaleatori</span>
+    <span class="s4">char </span><span class="s1">*hidden = word[posWord]</span><span class="s4">; </span><span class="s3">//On guardem la paraula aleatoria</span>
+
+    <span class="s4">char </span><span class="s1">wordToComplete[strlen(hidden)]</span><span class="s4">; </span><span class="s3">//array en la qual s’anirà afegint les lletres de la paraula que el jugador vagi encertant.</span>
+    <span class="s4">for </span><span class="s1">(</span><span class="s4">int </span><span class="s1">i = </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i &lt; strlen(hidden)</span><span class="s4">; </span><span class="s1">i++) {</span>
+        <span class="s1">wordToComplete[i] = </span><span class="s2">'_'</span><span class="s4">;         </span><span class="s3">//On subsitutim la paraula per '_'</span>
+    <span class="s1">}</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s4">for </span><span class="s1">(</span><span class="s4">int </span><span class="s1">i = </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i &lt; strlen(hidden)</span><span class="s4">; </span><span class="s1">i++) {</span>
+        <span class="s1">printf(</span><span class="s2">&quot;%c &quot;</span><span class="s4">, </span><span class="s1">wordToComplete[i])</span><span class="s4">;</span>
+    <span class="s1">}</span>
+    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+    <span class="s4">int </span><span class="s1">guess = </span><span class="s5">0</span><span class="s4">;</span>
+    <span class="s4">while</span><span class="s1">((numberAttempts &gt; </span><span class="s5">0</span><span class="s1">) &amp;&amp; (guess == </span><span class="s5">0</span><span class="s1">)) { </span><span class="s3">//bucle que mentre es compleixi la condició les operacions s'executaran</span>
+        <span class="s4">char </span><span class="s1">selectedLetter</span><span class="s4">; </span><span class="s3">//Lletra introduida per teclat</span>
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s4">for</span><span class="s1">(</span><span class="s4">int </span><span class="s1">i=</span><span class="s5">0</span><span class="s4">;</span><span class="s1">i&lt;</span><span class="s5">3</span><span class="s4">;</span><span class="s1">i++){</span>
+            <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+            <span class="s4">for</span><span class="s1">(</span><span class="s4">int </span><span class="s1">j=</span><span class="s5">0</span><span class="s4">;</span><span class="s1">j&lt;</span><span class="s5">10</span><span class="s4">;</span><span class="s1">j++){</span>
+                <span class="s1">printf(</span><span class="s2">&quot;%c &quot;</span><span class="s4">, </span><span class="s1">alphabet[i][j])</span><span class="s4">;  </span><span class="s3">//Bucle per recórrer l'abecedari</span>
+            <span class="s1">}</span>
+            <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">}</span>
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">Numero de intentos restantes: %d</span><span class="s4">\n\n</span><span class="s2">&quot;</span><span class="s4">, </span><span class="s1">numberAttempts)</span><span class="s4">; </span><span class="s3">//S'ensenya els intents que li queden</span>
+
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">Introduce una letra: &quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">scanf(</span><span class="s2">&quot;%c&quot;</span><span class="s4">, </span><span class="s1">&amp;selectedLetter)</span><span class="s4">; </span><span class="s3">//Escanejem la lletra introduida per teclat</span>
+        <span class="s1">getchar()</span><span class="s4">; </span><span class="s3">//Retorna el caràcter llegit</span>
+        <span class="s1">selectedLetter = toupper(selectedLetter)</span><span class="s4">; </span><span class="s3">//Per fer la conversió de minúscula a majúscula</span>
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s4">int </span><span class="s1">numberRightAnswer = </span><span class="s5">0</span><span class="s4">; </span><span class="s3">//Número de lletres que es porta encertades</span>
+        <span class="s4">int </span><span class="s1">repeat = </span><span class="s5">0</span><span class="s4">; </span><span class="s3">//Variable per si es repeteix la lletra introduida</span>
+        <span class="s4">for</span><span class="s1">(</span><span class="s4">int </span><span class="s1">i = </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i &lt; strlen(hidden)</span><span class="s4">; </span><span class="s1">i++) {  </span><span class="s3">//bucle per recórrer la paraula a adivinar</span>
+            <span class="s4">if</span><span class="s1">(hidden[i] == selectedLetter) {</span>
+                <span class="s1">numberRightAnswer = </span><span class="s5">1</span><span class="s4">;</span>
+                <span class="s4">if </span><span class="s1">(wordToComplete[i] == selectedLetter) </span><span class="s3">//Condició de la lletra encertada</span>
+                    <span class="s1">repeat = </span><span class="s5">1</span><span class="s4">;</span>
+                    <span class="s1">wordToComplete[i] = selectedLetter</span><span class="s4">;</span>
+
+            <span class="s1">}</span>
+        <span class="s1">}</span>
+
+
+        <span class="s4">if</span><span class="s1">(repeat == </span><span class="s5">1</span><span class="s1">)</span>
+            <span class="s1">printf(</span><span class="s2">&quot;Letra repetida, debes introducir una distinta</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s3">//Condició on s'analitza arrel la condició anterior que la lletra no es pot repetir</span>
+
+        <span class="s4">if</span><span class="s1">(numberRightAnswer == </span><span class="s5">0</span><span class="s1">){ </span><span class="s3">//Condició de la lletra fallada</span>
+            <span class="s1">numberAttempts--</span><span class="s4">; </span><span class="s3">//Es resta un a la variable dels errors que es tenen</span>
+            <span class="s4">switch </span><span class="s1">(numberAttempts) { </span><span class="s3">//condició per crear el penjat a partir del número d'errrors</span>
+                <span class="s4">case </span><span class="s5">0</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||   %cO/&quot;</span><span class="s4">, </span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||   / %c&quot;</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+                <span class="s4">case </span><span class="s5">1</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||   %cO/&quot;</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||     %c&quot;</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+                <span class="s4">case </span><span class="s5">2</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||   %cO/&quot;</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+                <span class="s4">case </span><span class="s5">3</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||   %cO/&quot;</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+                <span class="s4">case </span><span class="s5">4</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||   %cO &quot;</span><span class="s4">,</span><span class="s2">'</span><span class="s4">\\</span><span class="s2">'</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+                <span class="s4">case </span><span class="s5">5</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    O &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+                <span class="s4">case </span><span class="s5">6</span><span class="s1">:</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||===== &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||    | &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">||      &quot;</span><span class="s1">)</span><span class="s4">;</span>
+                    <span class="s4">break;</span>
+            <span class="s1">}</span>
+            <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s1">}</span>
+        <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;</span>
+        <span class="s4">for </span><span class="s1">(</span><span class="s4">int </span><span class="s1">i = </span><span class="s5">0</span><span class="s4">; </span><span class="s1">i&lt;strlen(hidden)</span><span class="s4">; </span><span class="s1">i++) {</span>
+            <span class="s1">printf(</span><span class="s2">&quot;%c &quot;</span><span class="s4">, </span><span class="s1">wordToComplete[i])</span><span class="s4">; </span><span class="s3">//mostrem les lletres que es vagin encertan</span>
+        <span class="s1">}</span>
+
+        <span class="s4">if</span><span class="s1">(strchr(wordToComplete</span><span class="s4">, </span><span class="s2">'_'</span><span class="s1">) == NULL) { </span><span class="s3">//retorna null si no la conté o punter a la posició en la que es troba</span>
+            <span class="s1">guess = </span><span class="s5">1</span><span class="s4">;</span>
+            <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\t\t\t</span><span class="s2">FELICIDADES, HAS GANADO!!!&quot;</span><span class="s1">)</span><span class="s4">; </span><span class="s3">//condició si les lletres formen la paraula s'ha guanyat</span>
+        <span class="s1">}</span>
+
+        <span class="s4">if </span><span class="s1">(numberAttempts &lt;=</span><span class="s5">0</span><span class="s1">) {</span>
+            <span class="s1">guess = </span><span class="s5">1</span><span class="s4">;</span>
+            <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\n\n\t\t\t</span><span class="s2">LASTIMA, HAS PERDIDO</span><span class="s4">\n</span><span class="s2">&quot;</span><span class="s1">)</span><span class="s4">;  </span><span class="s3">//condició en el cas de perdre</span>
+            <span class="s1">printf(</span><span class="s2">&quot;</span><span class="s4">\t\t\t</span><span class="s2">La palabra que tenias que adivinar era: %s&quot;</span><span class="s4">, </span><span class="s1">hidden)</span><span class="s4">;</span>
+        <span class="s1">}</span>
+    <span class="s1">}</span>
+<span class="s1">}</span>
+
+
+
+
+
+
+
+
+</pre>
+</body>
+</html>

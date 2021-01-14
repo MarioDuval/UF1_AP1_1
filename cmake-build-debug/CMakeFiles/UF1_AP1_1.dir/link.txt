@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2020.3.1\bin\cmake\win\bin\cmake.exe" -E rm -f CMakeFiles\UF1_AP1_1.dir/objects.a
+C:\MinGW\bin\ar.exe cr CMakeFiles\UF1_AP1_1.dir/objects.a @CMakeFiles\UF1_AP1_1.dir\objects1.rsp
+C:\MinGW\bin\gcc.exe -g   -Wl,--whole-archive CMakeFiles\UF1_AP1_1.dir/objects.a -Wl,--no-whole-archive  -o UF1_AP1_1.exe -Wl,--out-implib,libUF1_AP1_1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\UF1_AP1_1.dir\linklibs.rsp
